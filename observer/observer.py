@@ -18,4 +18,4 @@ class Observer(BaseCog):
                 channel = guild.get_channel(577395014988988436)
                 role = guild.get_role(425357864417099776)
                 if role not in before.roles and role in after.roles:
-                    await channel.send(f'Glückwunsch Agent {before.mentaion}, du wurdest aktiviert.')
+                    await channel.send(f'Glückwunsch Agent {before.mention}, du wurdest aktiviert.')
