@@ -14,5 +14,8 @@ class Observer(BaseCog):
     async def on_member_update(self, before, after):
         if after.guild.id == 357574333645717505 and isinstance(after, discord.Member):
             if before.roles != after.roles:
-                channel = before.guild.get_channel(577395014988988436)
-                await channel.send('Test')
+                guild = before.guild
+                channel = guild.get_channel(577395014988988436)
+                role = guild.get_role(425357864417099776)
+                if role not in before.roles and role in after.roles:
+                    await channel.send(f'Glückwunsch Agent {before.mentaion}, du wurdest aktiviert.')
